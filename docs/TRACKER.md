@@ -4,6 +4,8 @@ Rastreabilidade dos itens de `docs/PRD.md`, `docs/RFC.md`, `docs/FDD.md` e `docs
 
 Itens de desenho **sem origem identificável** (marcados "Proposto" nos documentos) ficam na seção 2, fora da tabela principal, para não serem confundidos com decisões da reunião.
 
+Correspondência de IDs com o PRD: `PRD-FR-nn` = `RF-nn`. Os `RNF-nn` do PRD estão cobertos por `PRD-NFR-01..07`, `PRD-CTX-04` (latência) e `ADR-003` (segurança).
+
 ## 1. Itens com origem
 
 | ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
@@ -197,5 +199,8 @@ Detalhes de desenho do FDD e do PRD necessários para implementar, **não discut
 | PRD-PROP-01 | docs/PRD.md | Metas "0 eventos perdidos" e redução de polling a definir | Não numeradas na reunião |
 | PRD-PROP-02 | docs/PRD.md | Probabilidade e impacto dos riscos | Avaliação do PRD |
 | PRD-PROP-03 | docs/PRD.md | Piloto com os 3 clientes e testes unitários e de integração específicos | Estratégia de testes sugerida |
+| FDD-PROP-13 | docs/FDD.md | Código `WEBHOOK_DEAD_LETTER_NOT_FOUND` (404) | Replay de item inexistente; a transcrição cita só "WEBHOOK_*, etc." [09:28] Bruno |
+| FDD-PROP-14 | docs/FDD.md | Código `WEBHOOK_REPLAY_FORBIDDEN` (403) | Na prática é o `ForbiddenError` de `requireRole` (`src/middlewares/auth.middleware.ts`) |
+| FDD-PROP-15 | docs/FDD.md | Códigos internos `WEBHOOK_DELIVERY_FAILED` e `WEBHOOK_DELIVERY_TIMEOUT` | Motivos gravados na DLQ; o timeout de 10 s tem origem em [09:42] Diego |
 | ADR-PROP-01 | docs/adrs/ADR-003-hmac-sha256-secret-por-endpoint.md | Secret precisa ser recuperável (não hash) | Consequência técnica de HMAC |
 | ADR-PROP-02 | docs/adrs/ADR-001, ADR-004, ADR-006 | Alternativas plausíveis não discutidas (at-most-once, BullMQ, sem assinatura) | Marcadas como plausíveis nos ADRs |

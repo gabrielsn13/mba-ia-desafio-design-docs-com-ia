@@ -50,7 +50,10 @@ Valide docs/TRACKER.md: (1) pelo menos 70% das linhas com fonte TRANSCRICAO no f
 - Detalhes sem origem (tabela `webhook_deliveries`, `next_attempt_at`, lote de 10, endpoint `rotate-secret`, métricas, metas do PRD) foram marcados como "Proposto" e separados na seção 2 do Tracker.
 - Alternativas não discutidas na reunião foram rotuladas como "plausíveis, não discutidas".
 - Ambiguidade de "5 tentativas" resolvida explicitamente (5 esperas após a primeira falha, cerca de 15 h) e registrada como questão em aberto.
+- Na revisão final contra o enunciado, o Tracker não listava 3 grupos de códigos de erro do FDD e usava IDs diferentes dos do PRD; foram adicionados e a correspondência foi documentada.
 - A validação automática do Tracker detectou um timestamp errado (`[09:45]` em vez de `[09:44]`), corrigido.
+
+No total, foram 4 ciclos principais de geração, revisão crítica e ajuste: ADRs, RFC/FDD (com as correções do FDD), PRD/Tracker (com a separação dos itens "Proposto") e a revisão final contra o enunciado.
 
 ## Como navegar a entrega
 
